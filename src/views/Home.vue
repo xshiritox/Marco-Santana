@@ -532,8 +532,11 @@ onMounted(async () => {
 /* CTA Section */
 .cta-section {
   padding: 6rem 0;
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
+  background: rgba(255, 255, 255, 0.02);
   text-align: center;
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 30px;
 }
 
 .cta-title {

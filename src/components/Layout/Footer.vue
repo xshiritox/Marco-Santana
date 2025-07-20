@@ -21,21 +21,42 @@
         <div class="footer-section">
           <h3 class="footer-title">Enlaces Rápidos</h3>
           <ul class="footer-links">
-            <li><router-link to="/" class="footer-link">Inicio</router-link></li>
-            <li><router-link to="/portfolio" class="footer-link">Portafolio</router-link></li>
-            <li><router-link to="/about" class="footer-link">Sobre Mí</router-link></li>
-            <li><router-link to="/contact" class="footer-link">Contacto</router-link></li>
-          </ul>
-        </div>
-
-        <!-- Services -->
-        <div class="footer-section">
-          <h3 class="footer-title">Servicios</h3>
-          <ul class="footer-links">
-            <li><span class="footer-link">Desarrollo Web</span></li>
-            <li><span class="footer-link">Diseño Responsivo</span></li>
-            <li><span class="footer-link">E-commerce</span></li>
-            <li><span class="footer-link">SEO & Performance</span></li>
+            <li>
+              <router-link 
+                to="/" 
+                class="footer-link"
+                @click="scrollToTop"
+              >
+                Inicio
+              </router-link>
+            </li>
+            <li>
+              <router-link 
+                to="/portfolio" 
+                class="footer-link"
+                @click="scrollToTop"
+              >
+                Portafolio
+              </router-link>
+            </li>
+            <li>
+              <router-link 
+                to="/about" 
+                class="footer-link"
+                @click="scrollToTop"
+              >
+                Sobre Mí
+              </router-link>
+            </li>
+            <li>
+              <router-link 
+                to="/contact" 
+                class="footer-link"
+                @click="scrollToTop"
+              >
+                Contacto
+              </router-link>
+            </li>
           </ul>
         </div>
 
@@ -49,7 +70,7 @@
             </p>
             <p class="contact-item">
               <span class="contact-icon">📱</span>
-              +57 300 123 4567
+              +53 53547990
             </p>
             <p class="contact-item">
               <span class="contact-icon">📍</span>
@@ -63,7 +84,7 @@
       <div class="footer-bottom">
         <div class="footer-bottom-content">
           <p class="copyright">
-            © {{ currentYear }} Marco Santana. Todos los derechos reservados.
+            {{ currentYear }} Marco Santana. Todos los derechos reservados.
           </p>
           <div class="footer-bottom-links">
             <span class="footer-link">Política de Privacidad</span>
@@ -79,6 +100,12 @@
 import { computed } from 'vue'
 
 const currentYear = computed(() => new Date().getFullYear())
+
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
 </script>
 
 <style scoped>

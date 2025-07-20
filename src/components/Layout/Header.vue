@@ -26,7 +26,10 @@
           <router-link 
             to="/" 
             class="nav-link"
-            @click="closeMobileMenu"
+            @click="() => {
+              closeMobileMenu();
+              scrollToTop();
+            }"
           >
             Inicio
           </router-link>
@@ -68,6 +71,12 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
+}
+
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 </script>
 
