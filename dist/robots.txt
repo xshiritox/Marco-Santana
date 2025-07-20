@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow admin routes
+Disallow: /admin
+
+# Sitemap
+Sitemap: https://marcosantana.dev/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
